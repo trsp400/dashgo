@@ -1,5 +1,9 @@
-import { Flex, Input, Text, Icon } from "@chakra-ui/react";
-import { RiSearchLine } from "react-icons/ri";
+import { Flex, Input, Text, Icon, HStack, Box, Avatar } from "@chakra-ui/react";
+import {
+  RiNotificationLine,
+  RiSearchLine,
+  RiUserAddLine,
+} from "react-icons/ri";
 
 export default function Dashboard() {
   return (
@@ -40,6 +44,36 @@ export default function Dashboard() {
           _placeholder={{ color: "gray.400" }}
         />
         <Icon as={RiSearchLine} fontSize="20" />
+      </Flex>
+
+      <Flex align="center" ml="auto">
+        <HStack
+          spacing="8"
+          mx="8"
+          pr="8"
+          py="1"
+          color="gray.300"
+          borderRightWidth={1}
+          borderColor="gray.700"
+        >
+          <Icon as={RiNotificationLine} fontSize="20" />
+          <Icon as={RiUserAddLine} fontSize="20" />
+        </HStack>
+
+        <Flex align="center">
+          <Box>
+            <Text>Thiago Robles</Text>
+            <Text color="gray.300" fontSize="small">
+              roblesthaigo38@gmail.com
+            </Text>
+          </Box>
+
+          <Avatar
+            size="md"
+            name="Thiago Robles"
+            src="https://github.com/trsp400.png"
+          />
+        </Flex>
       </Flex>
     </Flex>
   );
