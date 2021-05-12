@@ -61,7 +61,7 @@ export default function Dashboard() {
         </HStack>
 
         <Flex align="center">
-          <Box>
+          <Box mr="2">
             <Text>Thiago Robles</Text>
             <Text color="gray.300" fontSize="small">
               roblesthaigo38@gmail.com
