@@ -7,12 +7,15 @@ import {
   Box,
   Avatar,
   useBreakpointValue,
+  IconButton,
 } from "@chakra-ui/react";
 import {
+  RiMenuLine,
   RiNotificationLine,
   RiSearchLine,
   RiUserAddLine,
 } from "react-icons/ri";
+import { useSidebarDrawer } from "../../contexts/SidebarDrawerContext";
 import Logo from "./Logo";
 import NotificationNav from "./NotificationNav";
 import Profile from "./Profile";
@@ -23,6 +26,8 @@ export default function Header() {
     base: false,
     lg: true,
   });
+
+  const { onOpen } = useSidebarDrawer();
 
   return (
     <Flex
@@ -35,6 +40,17 @@ export default function Header() {
       px="6"
       align="center"
     >
+      {!isWideVersion && (
+        <IconButton
+          icon={<Icon as={RiMenuLine} />}
+          fontSize="24"
+          variant="unstyled"
+          onClick={onOpen}
+          aria-label="Abrir navegação"
+          mr="2"
+        />
+      )}
+
       <Logo />
       {isWideVersion && <SearchBox />}
 
